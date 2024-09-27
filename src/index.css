@@ -1,0 +1,87 @@
+@keyframes switchCurrenciesAnimation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+:root{
+  --transition-eff: all 0.3s ease 0s;
+}
+
+
+button,a{
+  cursor: pointer;
+}
+
+
+body{ 
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+h1{
+  font-size: 44px;
+}
+
+.converter-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  
+}
+.converter-app__how-much-block {
+}
+
+.converter-app__switch-currencies {
+  font-size: 4rem;
+  border: none;
+  background: none;
+  transition: var(--transition-eff);
+}
+.converter-app__switch-currencies:hover{
+  opacity: 0.7;
+}
+.converter-app__switch-currencies:disabled{
+  
+    opacity: 0.7; /* Убираем блеклость */
+    background-color: transparent; /* Задаем фон; по умолчанию какой то странный фон и все сливается */
+    color: #666; /* Задаем цвет текста */
+    cursor: not-allowed; /* Указываем, что кнопка неактивна */
+    
+
+}
+.converter-app__switch-currencies.active{
+  animation: switchCurrenciesAnimation 2s ease  forwards;
+}
+
+
+
+.converter-how-much-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+.converter-how-much-block__input{
+
+}
+.converter-how-much-block__input,.converter-how-much-block__select {
+  font-size: 1.5rem;
+  padding: 5px;
+}
+
+.converter-how-much-block__select {
+ 
+}
+
+.converter-how-much-block__option {
+}
